@@ -420,6 +420,12 @@ const recibeNumero= (elNumero) => {
     console.log(elNumero);
 
 }
+/* ALTERNATIVA:
+let deletrear = (numero) => {
+    numero=numero.toString();
+    console.log(numero.split('').reverse().join(''));
+}
+deletrear(12345); */
 
 
 /**/
