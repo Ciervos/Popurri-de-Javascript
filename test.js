@@ -409,10 +409,22 @@ const pasameLaRepe= () =>{
 
 /**/
 
-const recibeNumero= () => {
-  let elNumero = prompt("Pone un número de 2 o más cifras");
-  elNumero = elNumero.split("");
-console.log(elNumero.reverse());
+
+const recibeNumero= (elNumero) => {
+
+    elNumero= elNumero.toString(); 
+    elNumero = elNumero.split("");
+    elNumero=elNumero.reverse();
+    elNumero= elNumero.join("");
+   elNumero= parseInt(elNumero);
+    console.log(elNumero);
+
 }
 
 
+/**/
+const elABC= (laPalabra) => {
+  laPalabra = laPalabra.split("");  
+  console.log(laPalabra.sort());
+
+}
