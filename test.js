@@ -387,4 +387,32 @@ saludo();
 
  vcuadrado();
  
- 
+ /* */
+
+ let estoEsUnArray= [];
+
+const llenar= () =>{
+  let elPushito = prompt("Agregame una palabra al array :) que sea bonita")  
+ estoEsUnArray.push(elPushito);
+}
+
+const elFinal= () =>{
+   
+    alert(estoEsUnArray[estoEsUnArray.length-1]);
+  }
+
+const pasameLaRepe= () =>{
+    for(let i=0;i<estoEsUnArray.length;i++){
+        console.log(estoEsUnArray[i]);
+      }
+}
+
+/**/
+
+const recibeNumero= () => {
+  let elNumero = prompt("Pone un número de 2 o más cifras");
+  elNumero = elNumero.split("");
+console.log(elNumero.reverse());
+}
+
+
