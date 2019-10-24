@@ -466,7 +466,7 @@ const primeraLetra = (fraseImportante) => {
 
  const laMasLarga = (acaFrase) => {
   acaFrase = acaFrase.split(" ");
-  let otraVar = "1";  
+  let otraVar = "";  
 
   for(let i=0; i<acaFrase.length; i++){
        if (acaFrase[i].length>=otraVar.length){
