@@ -428,9 +428,32 @@ let deletrear = (numero) => {
 deletrear(12345); */
 
 
-/**/
-const elABC= (laPalabra) => {
-  laPalabra = laPalabra.split("");  
-  console.log(laPalabra.sort());
-
+/* agrupar alfabeticamente */
+const elABC = (laPalabra) => {
+  laPalabra = laPalabra.toLowerCase()  
+                       .split("")  
+                       .sort()
+                       .join("");
+  console.log(laPalabra);
 }
+
+
+ /***********************************************
+ * 
+ * Escribir una función que reciba una frase
+ * e imprima la misma con la primera letra de 
+ * cada palabra en mayúsculas.
+ *  
+ ***********************************************/
+
+const primeraLetra = (fraseImportante) => {
+ fraseImportante= fraseImportante.toLowerCase()
+                                 .split(" ");
+      for (let i=0; i<fraseImportante.length;i++){
+        fraseImportante[i] =  fraseImportante[i].charAt(0).toUpperCase() + fraseImportante[i].substring(1);      
+      }
+ fraseImportante = fraseImportante.join(" ");                                   
+ console.log(fraseImportante);
+}
+
+
