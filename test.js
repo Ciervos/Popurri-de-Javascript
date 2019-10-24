@@ -456,4 +456,23 @@ const primeraLetra = (fraseImportante) => {
  console.log(fraseImportante);
 }
 
+//4
+/***********************************************
+ * 
+ * Escribir una función que reciba una frase
+ * e imprima la palabra mas larga de la misma
+ *  
+ ***********************************************/
 
+ const laMasLarga = (acaFrase) => {
+  acaFrase = acaFrase.split(" ");
+  let otraVar = "1";  
+
+  for(let i=0; i<acaFrase.length; i++){
+       if (acaFrase[i].length>=otraVar.length){
+           otraVar = acaFrase[i];
+       } 
+    }
+
+    console.log(otraVar);
+ }
