@@ -496,3 +496,42 @@ for (let i = 0; i < arr.length; i++){
 }
 
 
+// 1
+/***********************************************
+ * 
+ * Hacer una función que reciba una frase y devuelva
+ * el número de vocales que tiene la misma.
+ *  
+ ***********************************************/
+
+  
+ const lasVocales = (laQuote) => {
+    laQuote = laQuote.toLowerCase();
+    laQuote = laQuote.split("");
+    let conteo = 0;
+
+    for(let i=0;i>laQuote.length;i++){
+
+         switch(laQuote[i]){
+         case"a":
+            conteo++;
+            return conteo;
+         case "e":
+           conteo++;
+           return conteo;
+         case "i":
+            conteo++;
+            return conteo;
+         case "o":
+            conteo++;
+            return conteo;
+         case "u":
+            conteo++;
+            return conteo;
+         default:
+            break;
+        }
+       
+       }
+    return conteo;   
+ }
