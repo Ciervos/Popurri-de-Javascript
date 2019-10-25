@@ -476,3 +476,23 @@ const primeraLetra = (fraseImportante) => {
 
     console.log(otraVar);
  }
+
+ /*ejemplo map*/
+ const arr = ["hola", "mundo"];
+const arr2 = arr.map((item)=>{
+    if(item == "hola"){
+        return 101;
+    }else {
+        return 200;
+    }
+});
+let arr4 = [];
+for (let i = 0; i < arr.length; i++){
+    if(arr[i] == "hola"){
+        arr4.push( 101);
+    }else {
+        arr4.push(200);
+    }
+}
+
+
