@@ -510,28 +510,135 @@ for (let i = 0; i < arr.length; i++){
     laQuote = laQuote.split("");
     let conteo = 0;
 
-    for(let i=0;i>laQuote.length;i++){
+    for(let i=0;i<laQuote.length;i++){
 
          switch(laQuote[i]){
          case"a":
             conteo++;
-            return conteo;
+            break;
          case "e":
            conteo++;
-           return conteo;
+           break;
          case "i":
             conteo++;
-            return conteo;
+            break;
          case "o":
             conteo++;
-            return conteo;
+            break;
          case "u":
             conteo++;
-            return conteo;
-         default:
             break;
+         
         }
        
        }
     return conteo;   
  }
+
+ /**/
+
+ const countVowels =(sentence) =>{
+    sentence = sentence.toLowerCase();
+    let vowels= "aeiou";
+    let vcount= 0;
+    for(let i = 0; i < sentence.length ; i++)
+    {
+        if (vowels.indexOf(sentence[i]) !== -1)
+        {
+            vcount++;
+        }
+    }
+    return vcount;
+ }
+
+ /* 
+ // 2
+ ***********************************************
+ * 
+ * Hacer una función que tome, primero, una frase
+ * y luego pida un caracter para remover de la 
+ * frase ingresada.
+ * Observaciones: validar que el caracter ingresado
+ * sea solo uno. Si es más de uno tirar un error.
+ *  
+ ***********************************************/
+
+const quitameEsto = (unaFrase) => {
+   
+let terminator = prompt("Dame un caracter para quitar de la frase :D");
+ 
+if(terminator.length>1){
+    throw "ERROR: solo se permite un caracter, reintentar función";
+}
+
+unaFrase = unaFrase.split("");
+
+for (let i=0;i<unaFrase.length;i++){
+    if (unaFrase[i]==terminator){
+        unaFrase.splice(i,1);
+        i--
+    }
+}
+
+unaFrase = unaFrase.join("");
+return unaFrase;
+}
+
+/*otra forma rocio*/
+const mifunction = (frase) =>{
+    let askCharacter= prompt ("decime un caracter de la frase ingresada");
+    if(askCharacter.length>1){
+        throw "Error! se permita sólo un caracter" ;
+    }
+    let newFrase= "";
+    let letra = "";
+    for (i=0; i<frase.length; i++){
+        letra = frase[i];
+        if(letra!=askCharacter){
+            newFrase = newFrase + frase[i];
+        }
+    }
+    return newFrase;
+ }
+ mifunction("hola como estas");
+
+ /*paula forma*/
+ const censura = (frase) => {
+    let censurador = prompt ("que tenes ganas de censurar hoy?");
+    if(censurador.length > 1){
+        throw "NO ESCRIBAS DE MAS" ;
+    }
+    frase= frase.split(censurador).join("");
+     
+    return frase;
+ }
+ censura ("blablñablña");
+
+
+ /***********************************************
+ * 
+ * 1. Hacer una función que guarde una lista
+ *    de listas de datos de personas. Deberia
+ *    guardar por cada persona, una lista de datos
+ *    que incluyan el nombre completo, la edad y 
+ *    la dirección de email.
+ * 2. Hacer una función que me devuelva la lista
+ *    completa de personas.
+ * 3. Hacer una función que me permita encontrar
+ *    una persona por email.
+ * 4. Hacer una función que me permita encontrar 
+ *    personas por nombre o parte del nombre.
+ * 
+ * Observaciones: Google. Mucho google.
+ * 
+ ************************************************/
+
+ let listGlobal = [];
+
+ const listPersonas = () =>{
+ let nombre = prompt("Introduce nombre completo");
+ let edad = prompt("Introduce tu edad");
+ let correo = prompt("Introduce tu email");
+  
+ } 
+
