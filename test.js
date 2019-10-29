@@ -622,23 +622,140 @@ const mifunction = (frase) =>{
  *    guardar por cada persona, una lista de datos
  *    que incluyan el nombre completo, la edad y 
  *    la dirección de email.
+ * 1b. Al ingresar nueva persona, validar que no 
+ *     exista en la lista. Si existe, tirar
+ *     un error. (Usar funcion distinta para validar
+ *     y llamar dentro de la funcion de guardar persona).
  * 2. Hacer una función que me devuelva la lista
  *    completa de personas.
  * 3. Hacer una función que me permita encontrar
  *    una persona por email.
  * 4. Hacer una función que me permita encontrar 
  *    personas por nombre o parte del nombre.
- * 
+ * 5. Hacer una función para borrar personas por mail.
+ * 6. Hacer una funcion que permita modificar nombre
+ *    buscando por mail.
+ * 7. Hacer una funcion que permita modificar edad 
+ *    buscando por mail.
  * Observaciones: Google. Mucho google.
  * 
  ************************************************/
+ /**/
 
+ 
+ /*1*/ 
  let listGlobal = [];
+ let listaPersonal = [];
+ 
 
- const listPersonas = () =>{
+ 
+ const validar = (nombre, correo) =>{
+    for (let i=0; i<listGlobal.length;i++){
+     
+       let currentCorreo= listGlobal[i][2];
+       let currentNombre= listGlobal[i][0];
+
+       if (nombre == currentNombre && correo== currentCorreo) {
+                   throw "PARA! YA EXISTE ESTA PERSONA, YOU'RE TEARING ME APART LISA!"
+               }         
+       }
+    }
+   
+
+ const guardarPersona = () =>{
  let nombre = prompt("Introduce nombre completo");
  let edad = prompt("Introduce tu edad");
  let correo = prompt("Introduce tu email");
-  
+ 
+ validar(nombre, correo);  
+ let elNum = listGlobal.length;
+ listaPersonal = [nombre,edad,correo];
+ listGlobal[elNum] = listaPersonal;
  } 
 
+/*2*/
+const damePersonas = () =>{
+    let listadoDePersonas = [];
+
+for(let i=0; i<listGlobal.length;i++){
+   let nombresDePersonas = listGlobal[i][0];
+     
+   listadoDePersonas.push(nombresDePersonas);
+
+}
+
+return listadoDePersonas;
+}
+
+/*3*/
+const buscarEmail = (elMail) =>{
+
+for (let i=0;i<listGlobal.length;i++){
+    let currentEmail = listGlobal[i][2];
+   
+   if (currentEmail == elMail){
+       
+    return listGlobal[i][0];
+   }
+}    
+
+}
+
+/*4*/
+
+const genteQueBuscaGente = (elBusca) =>{
+ let laListaTemporal = [];
+
+    for (let i=0;i<listGlobal.length;i++){
+        let currentNombre = listGlobal[i][0];
+        
+        if (currentNombre.indexOf(elBusca) != -1){
+                laListaTemporal.push(listGlobal[i]);
+        }
+        
+    };  
+for(let i=0;i<laListaTemporal.length;i++){
+
+console.log (laListaTemporal[i]);}
+}
+
+/*5*/
+const borrarXMail = (elMail) =>{
+
+    for (let i=0;i<listGlobal.length;i++){
+        let currentMail = listGlobal[i][2];
+    
+       if (currentMail == elMail){
+           listGlobal.splice(i,1);
+     
+       }
+    }    
+}
+/*6*/
+const modificarXMail = (elMail) =>{
+
+    for (let i=0;i<listGlobal.length;i++){
+        let currentMail = listGlobal[i][2];
+    
+       if (currentMail == elMail){
+           let nuevoNombre = prompt("Ingresar nuevo nombre");
+           listGlobal[i][0] = nuevoNombre;
+     
+       }
+    }    
+}
+
+/*7*/
+
+const modificarEdad = (elMail) =>{
+
+    for (let i=0;i<listGlobal.length;i++){
+        let currentMail = listGlobal[i][2];
+    
+        if (currentMail == elMail){
+           let nuevoEd = prompt("Ingresar Edad");
+           listGlobal[i][1] = nuevoEd;
+     
+       }
+    }    
+}
