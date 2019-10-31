@@ -759,3 +759,61 @@ const modificarEdad = (elMail) =>{
        }
     }    
 }
+
+
+/*Ocio*/
+
+
+const felizHalloween = () =>{
+
+    alert("Toc Toc, Bienvenidx a mi casa, supongo que quieres dulces pero solo puedo darte uno. Asi que veremos con cual dulce te quedas");
+    let nombre = prompt("Dime tu nombre");
+    let disfraz = confirm("¿Tienes un disfraz?");
+    let deQue = 0;
+    if(disfraz){
+        deQue = prompt("¿De qué es tu disfraz?");
+    } 
+    let dulceOSalado = confirm("¿Quieres algo salado?");
+    let noches = confirm("¿Te gusta màs la noche que el día?");
+    let historia = confirm("¿Quieres un cuento de terror?");
+
+    if (historia){
+        alert(`Habia una casa abandonada en pleno microcento, estaba lleno de graffitis y olia a muerto ¿pero qué lugar de microcentro no huele a eso? 
+        Era la noche de halloween aunque eso que importa por que nadie lo festeja. Sin embargo esa noche, las luces de aquél lugar estaban iluminadas. Oias voces en su interior, murmullos de gente festejando. Sientes curiosidad y tocas el timbre, para tu sorpresa, el timbre suena fuerte con una melodia llamativa, hasta la calificariamos como encantada. Una persona sale disfrazada de dràcula, te sonrie y saluda como si te conociera de toda la vida " Hola  ${nombre} , ¿vienes por un dulce? " `);
+     if(disfraz){
+        alert(` La persona de dràcula te sigue hablando, te comenta que ama tu disfraz de ${deQue} y procede a entregarte un dulce... `);
+     }
+
+    }
+  alert("El dulce que te ha tocado segùn tus respuestas es:");
+  
+  if(disfraz && dulceOSalado && historia && noches){
+    alert('Bocaditos de marroc salados :D');}
+  else if(disfraz && dulceOSalado==false && historia && noches)  {
+    alert('Candy corn: (https://cdn.shopify.com/s/files/1/0004/8132/9204/products/candy-corn-bulk_3_1024x1024.jpg)');
+  } else if (disfraz && dulceOSalado && historia && noches == false){
+     alert('Una bolsita de pretzels bañados en chocolate') ;
+  } else if (disfraz && dulceOSalado == false && historia && noches == false){
+    alert('Una bolsita de avellanas cubiertas en chocolate') ;
+  } else if (disfraz && dulceOSalado && historia==false && noches){
+    alert('una bolsa de garrapiñadas') ;
+  } else if (disfraz && dulceOSalado == false && historia == false && noches){
+      alert ("Bombones de licor/pisco");
+  } else if (disfraz && dulceOSalado && historia == false && noches == false){
+      alert('una bolsa de nachos y queso cheddar para untar ¿esto es válido?');
+  } else if (dulceOSalado && historia && noches==false){
+    alert('un alfajor de algarroba ');
+  }
+   else if (dulceOSalado && historia && noches){
+     alert("trufas de Roquefort");  
+   }
+   else if (dulceOSalado && historia ==false){
+       alert("Bombones de anchoa");
+   } else if (dulceOSalado ==false && historia && noches){
+       alert("Bombones de menta");
+   } else if (dulceOSalado ==false && historia && noches==false){
+       alert("Un Toblerone");
+   } else {
+    alert("Una bolsita de 1/4 llena de caramelos mediahora");
+   }
+}
