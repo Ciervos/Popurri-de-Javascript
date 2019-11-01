@@ -671,6 +671,7 @@ const mifunction = (frase) =>{
  let elNum = listGlobal.length;
  listaPersonal = [nombre,edad,correo];
  listGlobal[elNum] = listaPersonal;
+ /* listGlobal.push([nombre,edad,correo]);*/
  } 
 
 /*2*/
@@ -817,3 +818,5 @@ const felizHalloween = () =>{
     alert("Una bolsita de 1/4 llena de caramelos mediahora");
    }
 }
+
+felizHalloween();
